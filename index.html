@@ -1,9 +1,11 @@
 <head>
-    <link rel="stylesheet" href="style1.css">
+    <title>Art of Concrete</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <header>
     <nav id="nav-bar">
-        <a href="">Home</a>
+        <a href="http://localhost:3000/">Home</a>
         <div class="dropdown">
             <a href="">Services</a>
             <div class="dropdown-content">
@@ -16,7 +18,7 @@
                 <a href="">Retaining Walls</a>
             </div>
         </div>
-        <a href="our_work.html">Our Work</a>
+        <a href="http://localhost:3000/our-work">Our Work</a>
         <a href="#estimate-container">Contact</a>
     </nav>
 </header>
@@ -29,29 +31,33 @@
                 <h3>We specialize in everything from standard driveway and patio replacements to high-end stamped concrete and protective epoxy coatings for clients across the Wasatch Front. Whether you need a structural retaining wall or a custom-sealed finish, our team delivers professional craftsmanship and durable results for every square foot of your property.</h3>
             </div>
         </div>
-        <button>Get a Free Estimate</button>
+        <button href="our_work.html">Get a Free Estimate</button>
     </div>
     <div id="our-work">
-        <h3>Our Work</h3>
-        <div id="driveway" class="gallery-img">
-            <img src="" alt="driveway">
-            <h3>Driveways</h3>
+        <div id="title-container">
+            <h1>Our Work</h1>
         </div>
-        <div id="patio" class="gallery-img">
-            <img src="" alt="patio">
-            <h3>Patios</h3>
-        </div>
-        <div id="stamped-concrete" class="gallery-img">
-            <img src="" alt="stamped concrete">
-            <h3>Stamped Concrete</h3>
-        </div>
-        <div id="coating" class="gallery-img">
-            <img src="" alt="coating">
-            <h3>Concrete Coatings</h3>
-        </div>
-        <div id="retaining-walls" class="gallery-img">
-            <img src="" alt="retaining walls">
-            <h3>Retaining Walls</h3>
+        <div id="gallery-container">
+            <div id="driveway" class="gallery-img">
+                <img src="" alt="driveway">
+                <h3>Driveways</h3>
+            </div>
+            <div id="patio" class="gallery-img">
+                <img src="" alt="patio">
+                <h3>Patios</h3>
+            </div>
+            <div id="stamped-concrete" class="gallery-img">
+                <img src="" alt="stamped concrete">
+                <h3>Stamped Concrete</h3>
+            </div>
+            <div id="coating" class="gallery-img">
+                <img src="" alt="coating">
+                <h3>Concrete Coatings</h3>
+            </div>
+            <div id="retaining-walls" class="gallery-img">
+                <img src="" alt="retaining walls">
+                <h3>Retaining Walls</h3>
+            </div>
         </div>
     </div>
     <div id="faq-container">
@@ -73,21 +79,33 @@
     <div id="estimate-container">
         <div id="estimate">
             <h3>Get Your Free Estimate</h3>
-            <label for="name">Name</label>
-            <input type="text" name="name">
-            <label for="email">Email</label>
-            <input type="text" name="email">
-            <label for="number">Phone Number</label>
-            <input type="text" name="number">
-            <label for="address">Street Address</label>
-            <input type="text" name="address">
-            <label for="city">City</label>
-            <input type="text" name="city">
-            <label for="measurements">Measurements</label>
-            <input type="text" name="measurements">
-            <button>Submit</button>
+            <form id="estimate-form">
+                <label for="name">Name</label>
+                <input type="text" name="name">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+                <label for="number">Phone Number</label>
+                <input type="text" name="number">
+                <label for="address">Street Address</label>
+                <input type="text" name="address">
+                <label for="city">City</label>
+                <input type="text" name="city">
+                <label for="measurements">Measurements</label>
+                <input type="text" name="measurements">
+                <button type="submit">Submit</button>
+            </form>
             <p>Fill out the form above to be contacted regarding your project.</p>
             <p>You may also contact us directly at email@email.com or by phone at (800) 555-5555.</p>
+            <div id="modal">
+                <h4>Your estimate request has been submitted!</h4>
+                <p>Be sure to be on the lookout for an email or call.</p>
+                <button class="modal-btn">Close</button>
+            </div>
+            <div id="modal-failed">
+                <h4>Your estimate request failed to submit.</h4>
+                <p>Try reaching out directly at email@email.com or at (800) 555-5555.</p>
+                <button class="modal-btn">Close</button>
+            </div>
         </div>
     </div>
 </body>

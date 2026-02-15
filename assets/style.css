@@ -100,7 +100,7 @@ button {
 }
 
 button:hover {
-    background: #e64a19;
+    background: #25658C;
 }
 
 /* Gallery Section */
@@ -108,9 +108,14 @@ button:hover {
     max-width: 1000px;
     margin: 50px auto;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#gallery-container {
+    display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
 }
 
 .gallery-img {
@@ -129,7 +134,9 @@ button:hover {
     display: block;
 }
 
-.gallery-img h3 { font-size: 1.2rem; padding: 10px; margin: 0; }
+#our-work h1 {
+    text-align: center;
+}
 
 /* FAQ Section */
 #faq-container {
@@ -163,16 +170,27 @@ button:hover {
     line-height: 1.5;
 }
 
-/* Estimate Form */
+/* Estimate Container */
 #estimate-container {
     padding: 50px 0;
 }
 
 #estimate {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
+    padding: 25px 100px;
+    border: 2px solid #f9f9f9;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    box-shadow: 5px 10px 5px rgba(0,0,0,.1);
+}
+
+#estimate form {
+    display: flex;
+    flex-direction: column;
 }
 
 #estimate label {
@@ -185,6 +203,58 @@ button:hover {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+#estimate button {
+    margin-top: 25px;
+}
+
+#estimate-container #modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 10px;
+    background-color: #eee;
+    text-align: center;
+    box-shadow: 3px 5px 5px rgba(0,0,0,.1);
+}
+
+#estimate-container #modal-failed {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 10px;
+    background-color: #eee;
+    text-align: center;
+    box-shadow: 3px 5px 5px rgba(0,0,0,.1);
+}
+
+#modal button {
+    background: #444;
+    border: none;
+    padding: 5px 20px;
+    font: inherit;
+    cursor: default;
+    outline: inherit;
+}
+
+#modal-failed button {
+    background: #444;
+    border: none;
+    padding: 5px 20px;
+    font: inherit;
+    cursor: default;
+    outline: inherit;
+}
+
+#modal button:hover {
+    background: gray;
 }
 
 /* Our Work Page */
