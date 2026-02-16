@@ -4,7 +4,7 @@ body {
     font-family: sans-serif;
 }
 
-h3 { text-align: center; font-size: 2rem; }
+.subtitle { text-align: center; font-size: 2rem; }
 
 /* Navbar Section */
 #nav-bar {
@@ -59,8 +59,8 @@ h3 { text-align: center; font-size: 2rem; }
     align-items: center;
     justify-content: center;
     height: 60vh;
-    background: #eee;
-    padding: 20px;
+    background: #ddd;
+    /* padding: 20px; */
 }
 
 .hero-container {
@@ -68,7 +68,7 @@ h3 { text-align: center; font-size: 2rem; }
     align-items: center;
     justify-content: center;
     gap: 50px;
-    max-width: 1100px;
+    max-width: 60%;
     margin-bottom: 30px;
 }
 
@@ -86,8 +86,79 @@ h3 { text-align: center; font-size: 2rem; }
 #hero h1 { font-size: 3rem; margin-bottom: 10px; }
 #hero h3 { text-align: left; font-size: 1.1rem; font-weight: normal; line-height: 1.6; color: #444; }
 
+
+/* AI Banner Section */
+#ai-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 150px;
+    background-color: #222;
+    box-sizing: border-box;
+}
+
+.ai-msg {
+    color: white;
+}
+
+.ai-button {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: lime; /* Dark base color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden; /* This clips the giant rainbow sheet */
+    filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.6));
+    transition: filter 0.3s ease;
+}
+
+.ai-button::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    /* Your requested colors including the bright green */
+    background: conic-gradient(
+        #9b51e0, #e91e63, #4285f4, #22c55e, #9b51e0
+    );
+    animation: rotate-bright 4s linear infinite;
+    z-index: 0;
+}
+
+.ai-button::after {
+    content: '';
+    position: absolute;
+    inset: 0; /* This creates a 2px "border" effect */
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.ai-button:hover {
+    /* Make it "power up" on hover */
+    filter: drop-shadow(0 0 25px rgba(66, 133, 244, 0.8));
+}
+
+@keyframes rotate-bright {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ai-button span {
+    position: relative;
+    z-index: 2; /* Keeps text above the rainbow and the overlay */
+}
+
 /* Buttons */
-button {
+.c2a-button {
     background: #1B4965;
     color: white;
     border: none;
@@ -162,7 +233,7 @@ button:hover {
 
 /* FAQ Section */
 #faq-container {
-    background-color: #f9f9f9;
+    background-color: #ddd;
     padding: 40px 0;
 }
 
@@ -206,7 +277,7 @@ button:hover {
     margin: 0;
 }
 
-/* Estimate Container */
+/* Estimate Section */
 #estimate-container {
     padding: 50px 0;
 }
@@ -218,9 +289,9 @@ button:hover {
     max-width: 500px;
     margin: 0 auto;
     padding: 25px 100px;
-    border: 2px solid #f9f9f9;
+    border: 2px solid #ddd;
     border-radius: 25px;
-    background-color: #f9f9f9;
+    background-color: #ddd;
     box-shadow: 5px 10px 5px rgba(0,0,0,.1);
 }
 
@@ -291,6 +362,29 @@ button:hover {
 
 #modal button:hover {
     background: gray;
+}
+
+/* Review Section */
+#review-container {
+    display: flex;
+    background-color: #eee;
+}
+
+#review-container .left-container {
+    flex: 1;
+    border-right: 1px solid #ccc;
+}
+
+#review-container .right-container {
+    flex: 3;
+}
+
+.right-container .review {
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 5px 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 }
 
 /* Our Work Page */

@@ -23,15 +23,19 @@
     </nav>
 </header>
 <body>
-    <div id="hero" style="height: 85vh;">
+    <div id="hero" style="height: 70vh;">
         <div class="hero-container">
-            <img src="truck.png" alt="cement truck">
+            <img class="hero-img" src="truck.png" alt="cement truck">
             <div class="text-container">
                 <h1>Art of Concrete</h1>
                 <h3>We specialize in everything from standard driveway and patio replacements to high-end stamped concrete and protective epoxy coatings for clients across the Wasatch Front. Whether you need a structural retaining wall or a custom-sealed finish, our team delivers professional craftsmanship and durable results for every square foot of your property.</h3>
             </div>
         </div>
-        <button id="scroll-to-estimate">Get a Free Estimate</button>
+        <button class="c2a-button" id="scroll-to-estimate">Get a Free Estimate</button>
+    </div>
+    <div id="ai-banner">
+        <h2 class="ai-msg">Chat with our AI powered agent to collaborate and get a detailed overview of your project.</h2>
+        <button class="ai-button"><span>CHAT NOW</span></button>
     </div>
     <div id="our-work">
         <div id="title-container">
@@ -40,23 +44,23 @@
         <div id="gallery-container">
             <div id="driveway" class="gallery-img">
                 <img src="/images/driveway5.jpeg" alt="driveways">
-                <h3>Driveways</h3>
+                <h3 class="subtitle">Driveways</h3>
             </div>
             <div id="patio" class="gallery-img">
                 <img src="/images/patio2.jpeg" alt="patios">
-                <h3>Patios</h3>
+                <h3 class="subtitle">Patios</h3>
             </div>
             <div id="stamped-concrete" class="gallery-img">
                 <img src="/images/walkway.jpeg" alt="other service image (stamped concrete)">
-                <h3>Stamped Concrete</h3>
+                <h3 class="subtitle">Stamped Concrete</h3>
             </div>
             <div id="coating" class="gallery-img">
                 <img src="/images/workshop2.jpeg" alt="other service image (concrete coatings)">
-                <h3>Concrete Coatings</h3>
+                <h3 class="subtitle">Concrete Coatings</h3>
             </div>
             <div id="retaining-walls" class="gallery-img">
                 <img src="/images/retainingwall.jpeg" alt="other service image (retaining walls)">
-                <h3>Retaining Walls</h3>
+                <h3 class="subtitle">Retaining Walls</h3>
             </div>
         </div>
     </div>
@@ -90,7 +94,7 @@
     </div>
     <div id="estimate-container">
         <div id="estimate">
-            <h3>Get Your Free Estimate</h3>
+            <h3 class="subtitle">Get Your Free Estimate</h3>
             <form id="estimate-form">
                 <label for="name">Name</label>
                 <input type="text" name="name">
@@ -106,7 +110,7 @@
                 <input type="text" name="desc">
                 <label for="measurements">Measurements</label>
                 <input type="text" name="measurements">
-                <button type="submit">Submit</button>
+                <button class="c2a-button" type="submit">Submit</button>
             </form>
             <p>Fill out the form above to be contacted regarding your project.</p>
             <p>You may also contact us directly at email@email.com or by phone at (800) 555-5555.</p>
@@ -120,6 +124,40 @@
                 <p>Try reaching out directly at email@email.com or at (800) 555-5555.</p>
                 <p id="modal-error"></p>
                 <button class="modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    <div id="review-container">
+        <div class="left-container">
+            <h3 class="subtitle">Art of Concrete</h3>
+            <h3 class="subtitle">Angi's List</h3>
+            <ul>
+                <li><h2>4.7 Star Review</h2></li>
+                <li><h2>125 Satisfied Reviewers</h2></li>
+                <li><h2>See More <a href="https://www.angi.com/companylist/us/ut/draper/art-of-concrete-reviews-1.htm" target="_blank" style="color: black;">Here</a></h2></li>
+            </ul>
+        </div>
+        <div class="right-container">
+            <h3 class="subtitle">Over 1000+ Jobs Completed</h3>
+            <div class="review">
+                <h2>Janet C.</h2>
+                <h3>Larry and his crew did an incredible job on my driveway replacement. I could not have received a better quality job. Larry spelled out all all the details for the job and committed to it. He is kind, friendly and very professional. His crew showed up right on time and completed the work quickly and efficiently. All were friendly on the job. Job was cleaned up every day. I could not have asked for more. I would definitely recommend Art of Concrete...</h3>
+            </div>
+            <div class="review">
+                <h2>Dan M.</h2>
+                <h3>I highly recommend Art of Concrete to anyone that needs concrete work done. Larry and his crew do fantastic work. Everyone that has seen our new patio is impressed. My neighbor even wanted Larry's number for future reference. 5 Stars for Larry and Rob and the rest of the crew. Thank you for a job well done.</h3>
+            </div>
+            <div class="review">
+                <h2>Debra B.</h2>
+                <h3>Our overall experience with the restoration of our stamped concrete far exceeded our expectations. Larry Fife and his son did a great job and they were really easy to work with. They took great care to make sure we were pleased with the results. We will definitely hire them again.</h3>
+            </div>
+            <div class="review">
+                <h2>James O.</h2>
+                <h3>Larry and crew was very professional, excellent workmanship and reasonably priced! Larry is easy to work with and added some positive changes that weren't originally in the agreed contract, at no additional cost to me. Larry's crew was well experienced in replacing old driveways with new driveways.</h3>
+            </div>
+            <div class="review">
+                <h2>Lisa A.</h2>
+                <h3>I needed an emergency driveway replacement due to an HOA compliance complaint that was blocking the closing of my property!! Larry came to the rescue! I called him on Monday, he showed up that afternoon and gave me the estimate. Larry and his crew started the work the very next day on Tuesday and completed it on Wednesday. Larry and his crew are very professional, they know what they are doing and they got the work done fast.</h3>
             </div>
         </div>
     </div>
