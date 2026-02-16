@@ -5,7 +5,26 @@ const modalBtns = document.querySelectorAll('.modal-btn');
 modalBtns.forEach(modalBtn => {
     modalBtn.addEventListener('click', () => { modal.style.display = 'none'; modalFailed.style.display = 'none'; })
 });
+
 const form = document.getElementById('estimate-form');
+
+const scrollBtn = document.getElementById('scroll-to-estimate');
+const estimateSection = document.getElementById('estimate-container');
+
+scrollBtn.addEventListener('click', () => {
+    estimateSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
+const galleryImgs = document.querySelectorAll('.gallery-img');
+galleryImgs.forEach(img => {
+    img.addEventListener('click', (e) => {
+        // window.location.href = '/our-work';
+        console.log(e);
+    });
+});
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();

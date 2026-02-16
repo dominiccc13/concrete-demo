@@ -24,6 +24,7 @@ h3 { text-align: center; font-size: 2rem; }
 .dropdown {
     position: relative;
     display: inline-block;
+    cursor: default;
 }
 
 .dropdown-content {
@@ -35,6 +36,7 @@ h3 { text-align: center; font-size: 2rem; }
     z-index: 1;
     top: 100%;
     left: 0;
+    cursor: default;
 }
 
 .dropdown-content a {
@@ -42,14 +44,12 @@ h3 { text-align: center; font-size: 2rem; }
     padding: 12px 16px;
     display: block;
     font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: #444;
+    cursor: default;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    cursor: default;
 }
 
 /* Hero Section */
@@ -58,7 +58,7 @@ h3 { text-align: center; font-size: 2rem; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 60vh;
     background: #eee;
     padding: 20px;
 }
@@ -116,22 +116,44 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    transition: transform 0.5s ease;
 }
 
 .gallery-img {
+    position: relative;
     flex: 1;
     min-width: 280px;
+    max-height: 300px;
     background-color: #ccc;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1);
 }
 
 .gallery-img img {
     width: 100%;
-    height: 200px;
+    height: 100%;
+    z-index: 1;
     object-fit: cover;
     display: block;
+}
+
+.gallery-img h3 {
+    position: absolute;
+    z-index: 5;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    cursor: default;
+
 }
 
 #our-work h1 {
@@ -279,4 +301,5 @@ button:hover {
 .work-sample img {
     width: 400px;
     height: 400px;
+    object-fit: cover;
 }
