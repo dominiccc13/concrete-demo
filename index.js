@@ -10,7 +10,9 @@ app.use(express.json());
 const PORT = 3000;
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.APP_EMAIL,
         pass: process.env.APP_PASSWORD
@@ -26,7 +28,7 @@ app.get('/our-work', (req, res) => {
 });
 
 app.post('/get-estimate', (req, res) => {
-    const { name, email, number, address, city, measurements} = req.body;
+    const { name, email, number, address, city, desc, measurements} = req.body;
     const today = new Date();
     
     const mailOptions = {
@@ -40,14 +42,14 @@ app.post('/get-estimate', (req, res) => {
         from: process.env.APP_EMAIL,
         to: process.env.APP_EMAIL,
         subject: 'Estimate Requested',
-        text: [name, email, number, address, city, measurements] + `\nHas requested an estimate on ${today.toDateString()}.`
+        text: [name, email, number, address, city, desc, measurements] + `\nHas requested an estimate on ${today.toDateString()}.`
     }
 
     transporter.sendMail(estimateMailOptions, (error, info) => {
         if (error) {
-            return console.log(error);
+            return res.status(500).json({ success: false, message: `An error occurred: ${error}` })
         }
-        console.log('Estimate details email sent to company.')
+        res.status(200).json({ success: true, message: 'Email sent: ' + info.response });
     })
     
     transporter.sendMail(mailOptions, (error, info) => {

@@ -63,16 +63,28 @@
     <div id="faq-container">
         <div id="faq">
             <div class="question">
-                <div class="question-header"><h3>What are your prices?</h3><h3 class="question-expander">+</h3></div>
-                <p>Our rates depend on the type of concrete and the total square footage used. Labor is accounted for in our prices.</p>
+                <input type="checkbox" id="faq-1" class="faq-toggle">
+                <label for="faq-1" class="question-header">
+                    <h2>What are your prices?</h2>
+                    <h2>+</h2>
+                </label>
+                <p class="answer">Our rates depend on the type of concrete and the total square footage used. Labor is accounted for in our prices.</p>
             </div>
             <div class="question">
-                <div class="question-header"><h3>Question 2 goes here</h3><h3 class="question-expander">+</h3></div>
-                <p>Our rates depend on the type of concrete and the total square footage used. Labor is accounted for in our prices.</p>
+                <input type="checkbox" id="faq-2" class="faq-toggle">
+                <label for="faq-2" class="question-header">
+                    <h2>What is question 2?</h2>
+                    <h2>+</h2>
+                </label>
+                <p class="answer">Our rates depend on the type of concrete and the total square footage used. Labor is accounted for in our prices. Here is a substantial amount more of text to indicate how this will behave when the paragraph spans more than one line.</p>
             </div>
             <div class="question">
-                <div class="question-header"><h3>Question 3 goes here</h3><h3 class="question-expander">+</h3></div>
-                <p>Our rates depend on the type of concrete and the total square footage used. Labor is accounted for in our prices.</p>
+                <input type="checkbox" id="faq-3" class="faq-toggle">
+                <label for="faq-3" class="question-header">
+                    <h2>What is the third question?</h2>
+                    <h2>+</h2>
+                </label>
+                <p class="answer">Our rates depend on the type of concrete and the total square footage used. Labor is accounted for in our prices.</p>
             </div>
         </div>
     </div>
@@ -90,6 +102,8 @@
                 <input type="text" name="address">
                 <label for="city">City</label>
                 <input type="text" name="city">
+                <label for="desc">Brief Description of Project</label>
+                <input type="text" name="desc">
                 <label for="measurements">Measurements</label>
                 <input type="text" name="measurements">
                 <button type="submit">Submit</button>
@@ -104,6 +118,7 @@
             <div id="modal-failed">
                 <h4>Your estimate request failed to submit.</h4>
                 <p>Try reaching out directly at email@email.com or at (800) 555-5555.</p>
+                <p id="modal-error"></p>
                 <button class="modal-btn">Close</button>
             </div>
         </div>

@@ -1,5 +1,6 @@
 const modal = document.getElementById('modal');
 const modalFailed = document.getElementById('modal-failed');
+const modalError = document.getElementById('modal-error');
 const modalBtns = document.querySelectorAll('.modal-btn');
 modalBtns.forEach(modalBtn => {
     modalBtn.addEventListener('click', () => { modal.style.display = 'none'; modalFailed.style.display = 'none'; })
@@ -12,7 +13,7 @@ form.addEventListener('submit', async (e) => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-        const response = await fetch('http://localhost:3000/get-estimate', {
+        const response = await fetch('/get-estimate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -27,6 +28,7 @@ form.addEventListener('submit', async (e) => {
             modalFailed.style.display = 'block';
         }
     } catch (error) {
-        console.error("Network error:", error);
+        modalFailed.style.display = 'block';
+        modalError.innerText = error;
     }
 });

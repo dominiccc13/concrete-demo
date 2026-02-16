@@ -149,6 +149,14 @@ button:hover {
     margin: 0 auto;
 }
 
+.faq-toggle {
+    display: none;
+}
+
+.faq-toggle:checked ~ .answer {
+    max-height: 200px;
+}
+
 .question {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
@@ -159,15 +167,21 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .question-header h3 { margin: 0; font-size: 1.3rem; }
 
 .question p {
-    display: none;
     color: #555;
-    padding: 15px 0;
     line-height: 1.5;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    margin: 0;
 }
 
 /* Estimate Container */
