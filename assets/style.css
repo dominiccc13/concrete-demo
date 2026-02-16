@@ -412,6 +412,7 @@ button:hover {
 
 #review-container .right-container {
     flex: 3;
+    padding-bottom: 50px;
 }
 
 .right-container .review {
