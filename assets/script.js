@@ -11,32 +11,23 @@ scrollBtns.forEach(scrollBtn => {
     });
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const observerOptions = {
-//         threshold: 0.15
-//     };
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            console.log("Element visible!");
             entry.target.classList.add('active');
             observer.unobserve(entry.target);
         }
     });
 });
 
-document.querySelectorAll('.reveal').forEach((workCon) => observer.observe(workCon));
-// })
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-
-const galleryImgs = document.querySelectorAll('.gallery-img');
-
-galleryImgs.forEach(img => {
-    img.addEventListener('click', (e) => {
-        // window.location.href = '/our-work';
-        console.log(e);
-    });
+const modal = document.getElementById('modal');
+const modalFailed = document.getElementById('modal-failed');
+const modalError = document.getElementById('modal-error');
+const modalBtns = document.querySelectorAll('.modal-btn');
+modalBtns.forEach(modalBtn => {
+    modalBtn.addEventListener('click', () => { modal.style.display = 'none'; modalFailed.style.display = 'none'; })
 });
 
 const form = document.getElementById('estimate-form');
@@ -65,12 +56,4 @@ form.addEventListener('submit', async (e) => {
         modalFailed.style.display = 'block';
         modalError.innerText = error;
     }
-});
-
-const modal = document.getElementById('modal');
-const modalFailed = document.getElementById('modal-failed');
-const modalError = document.getElementById('modal-error');
-const modalBtns = document.querySelectorAll('.modal-btn');
-modalBtns.forEach(modalBtn => {
-    modalBtn.addEventListener('click', () => { modal.style.display = 'none'; modalFailed.style.display = 'none'; })
 });
