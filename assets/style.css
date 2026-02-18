@@ -259,10 +259,19 @@ button:hover {
 /* Gallery Section */
 #our-work {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 100px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.reveal {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
 }
 
 #title-container h1 {
