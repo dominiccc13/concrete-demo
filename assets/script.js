@@ -57,3 +57,23 @@ form.addEventListener('submit', async (e) => {
         modalError.innerText = error;
     }
 });
+
+const workSamplesImgs = document.querySelectorAll('.work-sample-img');
+const previewModal = document.getElementById('preview-modal');
+
+previewModal.addEventListener('click', () => {
+    previewModal.style.display = 'none';
+})
+
+workSamplesImgs.forEach(img => {
+    img.addEventListener('click', (e) => { 
+        previewModal.innerHTML = '';
+
+        const preview = document.createElement('img');
+        preview.src = e.target.src;
+        preview.className = 'modal-content';
+
+        previewModal.style.display = 'flex';
+        previewModal.appendChild(preview);
+    });
+});
